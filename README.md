@@ -11,9 +11,12 @@
 - Form validation
 - Firebase setup
 - Deploy app
-- Create signup & signin user in firebase
+- Create signup & signin user in firebase and implement
 
-- Setup redux toolkit
+- Setup redux toolkit 
+- Create store and user slice
+- Implement signout
+
 
 
 ## Features

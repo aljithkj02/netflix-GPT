@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import { LOGIN_BG_URL } from "../utils/constants";
 import { Header } from "../components/Header";
 import { validateData } from "../utils/validate";
 import { signinUser, signupUser } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { addUser } from "../redux/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -13,6 +16,8 @@ const Login = () => {
     email: '',
     password: ''
   })
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const toggleSignInForm = () => {
@@ -42,19 +47,21 @@ const Login = () => {
 
     if(isSignInForm){
       const response = await signinUser(data);
-      if(response.status){
-        const accessToken = response.user.accessToken;
-        navigate('/browse');
-      }else {
+      if(!response.status){
         setErrorMessage(response.message);
+      }else {
+        const { uid, email, displayName } = response.user;
+        dispatch(addUser({ uid, displayName, email }));
+        navigate('/browse');
       }
     }else{
       const response = await signupUser(data);
-      if(response.status){
-        const accessToken = response.user.accessToken;
-        navigate('/browse');
-      }else {
+      if(!response.status){
         setErrorMessage(response.message);
+      }else {
+        const { uid, email } = response.user;
+        dispatch(addUser({ uid, displayName: data.name, email }));
+        navigate('/browse');
       }
     }
   }
@@ -71,7 +78,7 @@ const Login = () => {
         <div className="absolute top-0 right-0 bottom-0 left-0 bg-black bg-opacity-40 h-screen bg-gradient-to-t from-black opacity-75 via-transparent to-black " />
       </div>
 
-      <div className="w-[30%] relative mx-auto mt-12 p-16 bg-black bg-opacity-70 rounded-md">
+      <div className="w-[90%] md:w-[60%] lg:w-[40%] xl:w-[30%] relative mx-auto mt-12 p-16 bg-black bg-opacity-70 rounded-md">
         <h2 className="text-white font-medium text-3xl">
           { isSignInForm ? "Sign In": "Sign Up" }
         </h2>
