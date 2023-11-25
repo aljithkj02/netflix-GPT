@@ -17,6 +17,9 @@
 - Create store and user slice
 - Implement signout
 
+- Register for TMDB API - create a new app there and get access token
+- Create a function to fetch the movies list
+
 
 
 ## Features

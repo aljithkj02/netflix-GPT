@@ -10,7 +10,7 @@ const Layout = () => {
     const navigate = useNavigate();
   
     useEffect(() => {
-      onAuthStateChanged(auth, (user) => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (!user) {
           dispatch(removeUser());
           navigate('/');
@@ -20,6 +20,8 @@ const Layout = () => {
           navigate('/browse');
         }
       });
+
+      return () => unsubscribe();
     }, [])
 
     return (
