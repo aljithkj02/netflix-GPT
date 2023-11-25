@@ -3,8 +3,17 @@
 - create-react-app
 - configured Tailwind CSS
 - Routing
+
 - Header
-- Login form
+
+- Signin form
+- Signup form
+- Form validation
+- Firebase setup
+- Deploy app
+- Create signup & signin user in firebase
+
+- Setup redux toolkit
 
 
 ## Features
