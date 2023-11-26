@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Outlet, useNavigate } from 'react-router-dom'
 import { auth } from '../utils/firebase/firebase';
 import { addUser, removeUser } from '../redux/userSlice';
+import { Header } from '../components/Header';
 
 const Layout = () => {
     const dispatch = useDispatch();
@@ -25,7 +26,10 @@ const Layout = () => {
     }, [])
 
     return (
+      <>
+        <Header />
         <Outlet />
+      </>
     )
 }
 

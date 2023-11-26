@@ -16,12 +16,11 @@ const Browse = () => {
   return (
     <div>
       <div className='absolute z-20 '> 
-        <Header />
         <TrailerInfo original_title={original_title} overview={overview} backdrop_path={backdrop_path} />
       </div>
       <TrailerBox />
       <div className='bg-black pb-20'>
-        <div className='mt-[-170px] z-20 relative w-[90%] mx-auto flex flex-col gap-10'>
+        <div className='-mt-[150px] z-20 relative w-[90%] mx-auto flex flex-col gap-10'>
           <MoviesList title="Now Playing" movies={nowPlayingMovies} />
           <MoviesList title="Popular" movies={popularMovies} />
           <MoviesList title="Top Rated" movies={topRatedMovies} />
