@@ -10,3 +10,14 @@ export const getMovies = async () => {
         console.log(error.message);
     }
 }
+
+export const getTrailer = async (videoId) => {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${videoId}/videos?language=en-US`, API_OPTIONS);
+        const json = await response.json();
+        const trailer = json?.results.find((item) => ["Trailer", "Teaser"].includes(item.type));
+        return trailer;
+    } catch (error) {
+        console.log(error.message);
+    }
+}

@@ -1,26 +1,23 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Header } from '../components/Header';
-import { useGetNowPlayingMovies } from '../hooks/useGetNowPlayingMovies';
 import { TrailerBox } from '../components/TrailerBox';
 import { MoviesList } from '../components/MoviesList';
+import { useNowPlayingMovies } from '../hooks/useNowPlayingMovies';
+import { TrailerInfo } from '../components/TrailerInfo';
 
 const Browse = () => {
-  const movies = useSelector(data => data.movies?.nowPlayingMovies);
-  useGetNowPlayingMovies();
-  console.log({ movies })
+  const { nowPlayingMovies, movieIndex } = useSelector(data => data.movies);
+  useNowPlayingMovies();
 
-  if(!movies) return;
-  const { original_title, overview } = movies[0];
+  if(!nowPlayingMovies) return;
+  const { original_title, overview, backdrop_path } = nowPlayingMovies[movieIndex];
   
   return (
     <div>
-      <Header />
-      <div>
-        <h1>{ original_title }</h1>
-        <p>{ overview }</p>
-        <button>Play</button>
-        <button>More info</button>
+      <div className='absolute z-20'> 
+        <Header />
+        <TrailerInfo original_title={original_title} overview={overview} backdrop_path={backdrop_path} />
       </div>
       <TrailerBox />
       <MoviesList />
