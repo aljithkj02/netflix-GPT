@@ -1,3 +1,5 @@
 export { default as Logo } from './logo.png'
 export { default as Info } from './info.png'
 export { default as Play } from './play.png'
+export { default as LeftArrow } from './left.png'
+export { default as RightArrow } from './right.png'

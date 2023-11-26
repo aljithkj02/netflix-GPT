@@ -21,6 +21,7 @@
 - Create a function to fetch the movies list
 - Create a function to fetch the trailers
 - Build trailerBox component to show the trailer on the screen
+- Create Movies list page
 
 
 

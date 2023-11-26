@@ -7,7 +7,8 @@ export const TrailerBox = () => {
   
   return (
     <div className="relative">
-      <div class="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
+      <div class="absolute inset-0 bg-black bg-opacity-10 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent bg-opacity-10"></div>
       <iframe
         className="w-full aspect-video"
         src={`${YOUTUBE_URL}${trailer.key}?si=MgnBBfPbHbI0jgLx&autoplay=1&mute=1&controls=0`}
