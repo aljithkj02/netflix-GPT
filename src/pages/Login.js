@@ -78,7 +78,7 @@ const Login = () => {
       </div>
 
       <div className="pt-48">
-        <div className="w-[90%] md:w-[60%] lg:w-[40%] xl:w-[30%] relative mx-auto p-16 bg-black bg-opacity-70 rounded-md">
+        <div className="w-[90%] md:w-[60%] lg:w-[40%] xl:w-[30%] relative mx-auto p-10 md:p-16 bg-black bg-opacity-70 rounded-md">
           <h2 className="text-white font-medium text-3xl">
             { isSignInForm ? "Sign In": "Sign Up" }
           </h2>

@@ -3,7 +3,7 @@ import { Info, Play } from '../assets'
 
 export const TrailerInfo = ({ original_title, overview, backdrop_path }) => {
   return (
-    <div className='mt-72 ml-20'>
+    <div className='mt-40 xl:mt-72 ml-20'>
       {/* <img src={`${MOVIE_IMAGE_URL}${backdrop_path}`}  alt="movie"
         className='w-52'
       /> */}
