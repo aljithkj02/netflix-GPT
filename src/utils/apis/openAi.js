@@ -16,7 +16,6 @@ export const getRecommendedMovies = async (query) => {
           messages: [{ role: 'user', content: prompt }],
           model: 'gpt-3.5-turbo',
         });
-        console.log(chatCompletion)
         return chatCompletion?.choices[0]?.message?.content?.split(', ');
     } catch (error) {
         console.log(error.message);
