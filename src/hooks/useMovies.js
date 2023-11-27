@@ -1,17 +1,19 @@
 import { useEffect } from "react"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getMovies, getTrailer } from "../utils/apis/movies";
 import { addMovieIndex, addNowPlayingMovies, addPopularMovies, addTopRatedMovies, addTrailer, addUpComingMovies } from "../redux/movieSlice";
 import { getIndexBW } from "../utils";
 
 export const useMovies = () => {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        fetchNowPlayingMovies();
-        fetchPopularMovies();
-        fetchTopRatedMovies();
-        fetchUpComingMovies();
+    const nowPlayingMovies = useSelector(store => store.movies.nowPlayingMovies);
+    useEffect(() => { 
+        if(!nowPlayingMovies){
+            fetchNowPlayingMovies();
+            fetchPopularMovies();
+            fetchTopRatedMovies();
+            fetchUpComingMovies();
+        }
     }, [])
 
     const fetchNowPlayingMovies = async () => {

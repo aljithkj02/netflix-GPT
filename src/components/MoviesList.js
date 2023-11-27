@@ -16,7 +16,7 @@ export const MoviesList = ({ title, movies }) => {
   return (
     <div>
       <h1 className=' text-2xl text-white'>{ title } </h1>
-      <div className='flex items-center gap-2 overflow-x-hidden mt-6 relative'>
+      <div className='flex items-center gap-2 mt-6 relative'>
         <button
           className='absolute left-0 top-0 bottom-0 px-4 py-2'
           onClick={() => handleScroll(-300)}
@@ -26,7 +26,7 @@ export const MoviesList = ({ title, movies }) => {
 
         <div
           ref={containerRef}
-          className='flex gap-2 overflow-x-hidden'
+          className='flex gap-2 overflow-x-scroll scrollbar-hide'
           style={{ scrollLeft: scrollLeft, scrollBehavior: 'smooth' }}
         >
             { movies.map((movie) => {

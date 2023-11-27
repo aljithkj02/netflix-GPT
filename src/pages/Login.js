@@ -68,7 +68,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="absolute top-0 z-0 w-full">
+      <div className="fixed top-0 z-0 w-full">
         <img
           src={LOGIN_BG_URL}
           alt="Background img"

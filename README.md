@@ -23,6 +23,9 @@
 - Build trailerBox component to show the trailer on the screen
 - Create Movies list page
 - GPT search feature
+- Integrate GPT Apis
+- Show fetched movies.
+- Make it responsive
 
 
 

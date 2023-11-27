@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Header } from '../components/Header';
 import { TrailerBox } from '../components/TrailerBox';
 import { MoviesList } from '../components/MoviesList';
 import { TrailerInfo } from '../components/TrailerInfo';

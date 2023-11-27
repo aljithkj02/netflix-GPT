@@ -46,7 +46,7 @@ export const Header = () => {
             <button className='font-bold text-white' onClick={handleSignOut}>Sign out</button>
           </div>
           <img src={USER_ICON} alt="User Icon" 
-            className='w-10'
+            className='w-10 cursor-pointer'
           />
         </div> }
     </div>
